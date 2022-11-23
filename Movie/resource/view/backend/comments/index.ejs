@@ -1,0 +1,72 @@
+<%- include('../../../element/header')%>
+<div class="container-scroller">
+   <%- include('../../../element/nav')%>
+   <div class="container-fluid page-body-wrapper">
+        <%- include('../../../element/menu')%>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Striped Table</h4>
+                        <p class="card-description">
+                            Add class <code>.table-striped</code>
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th> Replay To</th>
+                                    <th> Msg</th>
+                                    <th>Publish</th>
+                                    <th>Created At</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%comment.forEach(ele=>{ %>
+                                    <tr>
+                                        <td class="py-1">
+                                           <%=ele.name%>
+                                        </td>
+                                        <td>
+                                            <%=getName(comment,ele.responseTo) ?? 'N/A'%>
+                                        </td>
+                                         <td> <%=ele.content%></td>
+                                        <td>
+                                            <span class="badge badge-<%=ele.publish ? 'success':'danger'%>"><%=ele.publish ? 'publish':'Unpublish'%></span>
+                                        </td>
+                                        <td>
+                                            May 15, 2015
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm" href="#">Action</a>
+                                        </td>
+                                    </tr>
+                                <% })%>
+                            </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+<%- include('../../../element/footer')%>
+
+<%
+  function getName(arr,id){
+     var name = null;
+     arr.forEach(ele=>{
+         if(ele.id == id){
+             name = ele.name
+         }
+     })
+     return name
+  }
+%>

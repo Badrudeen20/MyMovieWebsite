@@ -1,0 +1,38 @@
+<%- include('../component/header')%>
+
+<%- include('../component/nav')%>
+
+<section class="container ">
+   <div class="row">
+       <div class="col-md-8">
+         
+         <form action="/detailUplaod" method="post">
+            <div class="form-group">
+              <label for="quality">Quality</label>
+              <input type="text" class="form-control" name="quality" id="quality" placeholder="Quality" />
+            </div>
+            <div class="form-group">
+              <label for="story">Story</label>
+              <textarea  name="story" class="form-control" id="story" placeholder="Story"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+          </form>
+
+       </div>
+
+      
+
+
+
+   </div>
+</section>
+
+
+<section class="container">
+  <%- include('../component/foot')%>
+</section>
+
+
+<%- include('../component/footer')%>
+
+    

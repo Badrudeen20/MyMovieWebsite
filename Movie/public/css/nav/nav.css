@@ -1,0 +1,32 @@
+nav {
+  position: relative;
+}
+
+nav i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+nav .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+nav .logo img {
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  nav .toggle {
+    display: none;
+  }
+  nav .menu {
+    display: none;
+  }
+}
+/*# sourceMappingURL=nav.css.map */

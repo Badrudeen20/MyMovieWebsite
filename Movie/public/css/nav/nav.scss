@@ -1,0 +1,32 @@
+nav{
+    position: relative;
+    i{
+       font-size:30px; 
+       cursor: pointer;
+    }
+    .logo{
+       width: 45px;
+       height:45px; 
+       border-radius: 100%;
+       position: relative;
+       overflow:hidden;
+       img{
+          position: absolute;
+          width: 100%;
+          cursor: pointer;
+       }
+ 
+    }
+
+    @media (min-width: 768px) {
+      
+      .toggle{
+        display: none;
+      }
+      .menu{
+       display: none;
+    }
+ 
+    }
+   
+ }

@@ -1,0 +1,27 @@
+.menubar {
+  position: absolute;
+  z-index: 1000;
+}
+
+.menubar .menu ul {
+  width: 100%;
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .menubar {
+    display: none;
+  }
+}
+
+.menubar2 .menu ul {
+  width: 100%;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .menubar2 {
+    display: none;
+  }
+}
+/*# sourceMappingURL=menu.css.map */

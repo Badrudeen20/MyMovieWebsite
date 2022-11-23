@@ -1,0 +1,80 @@
+<%- include('../../../element/header')%>
+<div class="container-scroller">
+   <%- include('../../../element/nav')%>
+   <div class="container-fluid page-body-wrapper">
+        <%- include('../../../element/menu')%>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="card-title">Striped Table</h4>
+                                <a href="/panel/movie/create" class="btn btn-primary btn-rounded btn-icon d-flex align-items-center justify-content-center">
+                                  <i class="ti-plus"></i>
+                                </a>
+                            </div>
+                          
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Poster</th>
+                                    <th> Movie</th>
+                                    <th>Rating</th>
+                                    <th>Publish</th>
+                                    <th>Trend</th>
+                                    <th>Released</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% movies.forEach((ele,index)=>{ %>
+                                    <tr>
+                                        <td class="py-1">
+                                            <img src="<%=ele.poster%>" alt="image"/>
+                                        </td>
+                                        <td>
+                                            <span><%=ele.name%></span>
+                                        </td>
+                                        <td>
+                                            $ 77.99
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-<%=ele.publish ? 'success':'danger'%>"><%=ele.publish ? 'Publish':'Unpublish'%></span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-<%=ele.trend ? 'success':'danger'%>"><%=ele.trend ? 'IN':'OUT'%></span>
+                                        </td>
+                                        <td>
+                                            May 15, 2015
+                                        </td>
+                                        <td>
+                                           <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" id="notificationDropdown">Action</button>
+                                           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+                                           
+                                            <a class="dropdown-item " href="/panel/movie/edit">
+                                              Edit
+                                            </a>
+                                            <a class="dropdown-item ">
+                                             Delete
+                                            </a>
+                                          </div>
+                                        </td>
+                                    </tr>
+                                <%})%>
+                               
+                           
+                            </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+<%- include('../../../element/footer')%>

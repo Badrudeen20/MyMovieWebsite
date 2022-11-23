@@ -1,0 +1,103 @@
+<%- include('../component/header')%>
+
+<%- include('../component/navbar')%>
+<div class="container menubar d-none">
+  <%- include('../component/menubar')%>
+</div>
+<%- include('../component/search')%>
+
+  
+<section class="container ">
+  <div class="row">
+      <div class="col-md-8 d-flex justify-content-center">
+       <div class="row">
+         <%detail.forEach((ele,index)=>{ %>
+           <div class="col-12">
+             <div class="card">
+               <img src="<%=ele.poster%>" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               </div>
+             </div>
+           </div>
+           <div class="col-12 my-3">
+             <div class="card">
+               <div class="card-body">
+     
+                   <div class="detail mb-2">
+                     <h6 class="mb-0">IMDB:</h6>
+                     <span><%=ele.imdb%>/10</span>
+                   </div>
+ 
+                   <div class="detail mb-2">
+                     <h6  class="mb-0">GENRES:</h6>
+                     <span><%=ele.genres%></span>
+                   </div>
+     
+                   <div class="detail mb-2">
+                     <h6  class="mb-0">LANGUAGE:</h6>
+                       <span><%=ele.language%></span>
+                   </div>
+                                         
+                   <% var detail =   JSON.parse(ele.movie_data) %>
+                   <div class="detail mb-2">
+                     <h6 class="mb-0">QUALITY:</h6>
+                     <span><%=detail[0].quality%></span>
+                   </div>
+       
+       
+                   <div class="detail mb-2">
+                     <h6 class="mb-0">STORY:</h6>
+                     <span><%=detail[0].story%> </span>
+                   </div>
+    
+               </div>
+             </div>
+             
+           </div>
+
+         
+ 
+           <div class="col-12 my-3">
+             <div class="d-flex justify-content-around">
+               <div class="w-50  d-flex justify-content-center">
+                 <a href="" class="btn btn-outline-primary w-75 ">Download</a>
+               </div>
+               <div class="w-50  d-flex justify-content-center">
+                 <a href="" class="btn btn-outline-primary w-75 ">Watch Online</a>
+               </div>
+             </div>
+           </div>
+
+          
+            
+          
+             
+         <% }) %>
+       </div>
+
+      </div>
+
+
+
+      <div class="col-md-4 my-3">
+        <div class="container px-0 menubar2 mb-3">
+            <%- include('../component/menubar')%>
+        </div>
+            <%- include('../component/sidebar')%>
+      </div>
+
+  </div>
+</section>
+
+
+<%- include('../component/feedback')%>
+<section class="container">
+  <%- include('../component/comment')%>
+</section>
+<section class="container">
+  <%- include('../component/foot')%>
+</section>
+<%- include('../component/footer')%>
+
+    

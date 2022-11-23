@@ -1,0 +1,9 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.posts .card .card-body h6 {
+  margin: .4rem 0 .3rem;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+<section class="container mb-3 ">
+    <form class="row" action="/postComment" method="POST">
+       <div class="col-md-8">
+        <div class="form-group">
+          <label for="content" class="mb-1">Feedback</label>
+          <textarea class="form-control" id="content" rows="3" name="content" placeholder="Share your thoughts..."></textarea>
+        </div>
+        <div class="form-group mt-3 w-50">
+          <input class="form-control"  placeholder="Enter name" name="name"/>
+        </div>
+        <!-- postId start -->
+         <input class="form-control"  type="hidden" name="postId" value="<%=postId%>"/>
+        <!-- postId end -->
+        <button type="submit" class="btn btn-primary mt-2">Send Feedback</button>
+       </div>
+    </form>
+</section>

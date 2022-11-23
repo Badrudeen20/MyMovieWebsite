@@ -1,0 +1,74 @@
+<section id="sidebar" class="sidebarlist">
+    <ul class="list-group border mb-3 ulList">
+        <li class="list-group-item border-0 my-2 active liList" data-id="home">
+           <div class="w-50">
+             <i class="bi bi-house-door"></i>
+             <span>Home</span>
+           </div>
+        </li>
+        <li class="list-group-item border-0 my-2 liList " data-id="hindi">
+            <div>
+                <i class="bi bi-translate"></i>
+                <span>Hindi</span>
+            </div>
+         </li>
+         <li class="list-group-item border-0 my-2 liList" data-id="english">
+            <div>
+                <i class="bi bi-translate"></i>
+                <span>English</span>
+            </div>
+         </li>
+    
+         <li class="list-group-item border-0 my-2 liList" data-id="series">
+            <div>
+                <i class="bi bi-box"></i>
+                <span>WEB Series</span>
+            </div>
+         </li>
+    
+         <li class="list-group-item border-0 my-2">
+            <div class="d-flex justify-content-between mb-2 drop">
+                <div>
+                    <i class="bi bi-layers"></i>
+                    <span>Genres</span>
+                </div>
+                 <div>
+                   <i class="bi bi-chevron-down dropdownIcon"></i>
+                 </div>
+              </div>
+
+
+              <ul  class="list-group border mb-3 d-none down ulChildList" >
+                <li class="list-group-item border-0 my-1 liChildList" data-id="action">
+                      <div class="w-50">
+                        <i class="bi bi-house-door"></i>
+                        <span>Action</span>
+                      </div>
+                </li>
+
+                <li class="list-group-item border-0 my-1 liChildList" data-id="comedy">
+                      <div class="w-50">
+                        <i class="bi bi-house-door"></i>
+                        <span>Comedy</span>
+                      </div>
+                </li>
+
+                <li class="list-group-item border-0 my-1 liChildList" data-id="sci-fi">
+                      <div class="w-50">
+                        <i class="bi bi-house-door"></i>
+                        <span>Sci-Fi</span>
+                      </div>
+                </li>
+
+                <li class="list-group-item border-0 my-1 liChildList" data-id="horror">
+                      <div class="w-50">
+                        <i class="bi bi-house-door"></i>
+                        <span>Horror</span>
+                      </div>
+                </li>
+            </ul>
+
+
+         </li>
+    </ul>
+</section>

@@ -1,0 +1,77 @@
+<%- include('../component/header')%>
+
+<%- include('../component/navbar')%>
+<div class="container menubar d-none">
+  <%- include('../component/menubar')%>
+</div>
+<%- include('../component/search')%>
+
+<section class="container posts">
+   <div class="row">
+       <div class="col-md-8">
+
+         <div class="row">
+         
+          <% movies.forEach((ele,index)=>{%>  
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
+              <div class="card">
+                <% let link = ele.link.split(' ').join('+') %> 
+                <a href="/download/<%=link%>">
+                  <img src="<%=ele.poster%>" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                  <div class="beauty d-flex justify-content-between">
+                    <div class=" d-flex align-items-center">
+                      <img src="/icon/star.png" alt="" style="width:16px;" />
+                      <small  style="font-size: 16px; margin-left: 3px;"><%=ele.imdb%></small>
+                    </div>
+                    <div>
+                      <img src="/icon/bookmark.png" alt="" style="width:16px;" />
+                    </div>
+                  </div>
+                  <h6><%=ele.name%></h6>
+                  <p class="card-text">
+                    <%=ele.link%>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% }) %>   
+            
+         </div>
+
+         <div class="col-md-12  d-flex justify-content-center mt-3">
+           <%- include('../component/pagination')%>
+         </div>
+
+
+       </div>
+      
+       <div class="col-md-4">
+        <div class="container px-0 menubar2 mb-3">
+          <%- include('../component/menubar')%>
+        </div>
+
+        <%- include('../component/sidebar')%>
+       </div>
+
+
+
+   </div>
+</section>
+
+
+<section class="container">
+ 
+  <%- include('../component/foot')%>
+</section>
+
+
+<%- include('../component/footer')%>
+<script>
+  var limit = +"<%= limit[0].total %>";
+  var index = +"<%= index %>";
+ </script>
+ <script src="/pagination.js"></script>
+
+    

@@ -1,0 +1,99 @@
+<label for="feedback" class="mb-1">Comments</label>
+
+<ul class="list-group comment border-0">
+
+  <% chat.forEach(function(com,no){ %> 
+    <%if(!com.responseTo){%> 
+      <% function reply(el){ %>
+        <li class="list-group-item p-0 border-0">
+          <div class="card border-primary mb-3" >
+            <div class="card-header d-flex align-items-center">
+              <div class="profile border d-flex  justify-content-center align-items-center"
+                style="width: 45px; height:45px; border-radius: 100%; position: relative; overflow:hidden" >
+                <img src="/poster/profile.jpg" class="card-img-top" alt="..." style="position: absolute; width: 100%;">
+              </div>
+              <div class="user_name w-100  ">
+                  <div class="d-flex flex-column mx-2">
+                    <span class="m-0 p-0"><%=el.name%></span>
+                    <small class="m-0 p-0">02 jun 2010</small>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body text-primary py-1">
+              <p class="card-text">Some quick example text to build on the card title</p>
+            </div>
+            <div class="d-flex text-muted mt-0 mb-1 mx-2">
+                <div class="mx-2">
+                  <small  style="cursor: pointer;" onClick="replyForm('<%=postId%>',<%=el.id%>)">Reply</small>
+                </div>
+                <div class="mx-2">
+                  <small style="cursor: pointer;">View (<%=viewCount(el.id)%>)</small>
+                </div>
+            </div>
+              <!-- reply form start -->
+                <li class="list-group-item p-0 border-0" id="form<%=el.id%>"></li> 
+              <!-- reply form end -->
+          </div>
+        </li>
+        <% function replyTo(id){%>
+        <ul class="list-group comment border-0" style="margin-left:20px;">
+          <% chat.forEach(function(repTo){ %> 
+            <%if(repTo.responseTo == id){ %>
+              
+                <li class="list-group-item p-0  border-0">
+                  <div class="card border-primary mb-3" >
+                    <div class="card-header d-flex align-items-center">
+                      <div class="profile border d-flex  justify-content-center align-items-center"
+                        style="width: 45px; height:45px; border-radius: 100%; position: relative; overflow:hidden" >
+                        <img src="/poster/profile.jpg" class="card-img-top" alt="..." style="position: absolute; width: 100%;">
+                      </div>
+                      <div class="user_name w-100  ">
+                          <div class="d-flex flex-column mx-2">
+                            <span class="m-0 p-0"><%=repTo.name%></span>
+                            <small class="m-0 p-0">02 jun 2010</small>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card-body text-primary py-1">
+                      <p class="card-text">Some quick example text to build on the card title</p>
+                    </div>
+                    <div class="d-flex text-muted mt-0 mb-1 mx-2">
+                      <div class="mx-2">
+                        <small style="cursor: pointer;">View (<%=viewCount(repTo.id)%>)</small>
+                      </div>
+                      <div>
+                        <small  style="cursor: pointer;" onClick="replyForm('<%=postId%>',<%=repTo.id%>)">Reply</small>
+                      </div>
+                    </div>
+                       <!-- reply form start -->
+                        <li class="list-group-item p-0 border-0 " id="form<%=repTo.id%>"></li> 
+                      <!-- reply form end -->
+                  </div> 
+                </li>
+              
+              <%replyTo(repTo.id)%>
+            <% } %> 
+          <%})%> 
+        </ul>
+        <% } replyTo(com.id)%>
+        
+      <%} reply(com) %>
+    <%} %> 
+  <% }) %>
+
+
+  <% function viewCount(id){
+    let count = 0
+    chat.forEach((ele)=>{
+      if(ele.responseTo == id){
+          count++
+      }
+    })
+    return count
+  }
+  %>
+</ul>
+
+
+
+

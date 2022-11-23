@@ -1,0 +1,54 @@
+<%- include('../component/header')%>
+
+<%- include('../component/nav')%>
+
+<section class="container d-flex justify-content-center ">
+
+        <form class="row ">
+           <div class="col-6 ">
+              <div class="form-group">
+                <label for="movieName">Name</label>
+                <input type="text" class="form-control" id="movieName" name="movieName" placeholder="Movie Name">
+              </div>
+           </div>
+           <div class="col-6 ">
+            <div class="form-group">
+                <label for="movieLink">Link</label>
+                <input type="text" class="form-control" id="movieLink" name="movieLink" placeholder="Movie Link">
+            </div>
+           </div>
+            
+           <div class="col-6 ">
+                <div class="form-group">
+                    <label for="movieRate">Rate</label>
+                    <input type="text" class="form-control" id="movieRate" name="movieRate" placeholder="Movie Rate">
+                </div>
+           </div>
+
+           <div class="col-6 pt-4">
+            <div class="form-check form-switch">
+                <label class="form-check-label" for="moviePublish">Is Publish</label>
+                <input class="form-check-input" type="checkbox" name="moviePublish" value="1" role="switch" id="moviePublish" checked>
+            </div>
+           </div>
+           <div class="col-12">
+            <div class="mb-3">
+                <label for="movieImage" class="form-label">Select Movie Image</label>
+                <input class="form-control" type="file" name="movieImage" id="movieImage">
+              </div>
+           </div>
+           <div class="col-12 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary">Next</button>
+           </div>
+          </form>
+
+     
+</section>
+
+
+<section class="container">
+  <%- include('../component/foot')%>
+</section>
+
+
+<%- include('../component/footer')%>
